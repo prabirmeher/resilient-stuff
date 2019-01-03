@@ -1,0 +1,17 @@
+[Unit]
+Description=Resilient-Circuits Service
+After=resilient.service
+Requires=resilient.service
+
+[Service]
+Type=simple
+User=integration
+WorkingDirectory=/home/integration
+ExecStart=/bin/resilient-circuits run
+Restart=always
+TimeoutSec=10
+Environment=APP_CONFIG_FILE=/home/integration/.resilient/app.config
+Environment=APP_LOCK_FILE=/home/integration/.resilient/resilient_circuits.lock
+
+[Install]
+WantedBy=multi-user.target

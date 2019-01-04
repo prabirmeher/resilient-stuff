@@ -7,7 +7,7 @@ Requires=resilient.service
 Type=simple
 User=integration
 WorkingDirectory=/home/integration
-ExecStart=/bin/resilient-circuits run
+ExecStart=/usr/local/bin/resilient-circuits run
 Restart=always
 TimeoutSec=10
 Environment=APP_CONFIG_FILE=/home/integration/.resilient/app.config
